@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+
 #include "priority_queue.h"
 
 using namespace std;
@@ -21,7 +22,7 @@ int main(int argc, char* argv[]){
 	int customNumber = 0;
 
 	//empty check
-	if(priQueue.empty()){
+	if (priQueue.empty()) {
 		cout << "[!] Priority Queue is empty - initalized" << endl;
 	}
 
@@ -30,25 +31,25 @@ int main(int argc, char* argv[]){
 	pushQueue(&priQueue,598);
 	pushQueue(&priQueue,302);
 
-	if( argc > 1 ){
+	if (argc > 1) {
 		customNumber = atoi(argv[1]);
-		if( customNumber > -500 && customNumber < 2000 ){
+		if (customNumber > -500 && customNumber < 2000) {
 			pushQueue(&priQueue,customNumber);
 		}
-		else{
+		else {
 			pushQueue(&priQueue,-1);
 		}
 	}
-	else{
+	else {
 		pushQueue(&priQueue,-1);
 	}
 
 	//empty & size
-	if(priQueue.empty()){
+	if (priQueue.empty()) {
 		cout << "[-] Priority Queue is empty. - Push method did not work!" << endl;
 		return -1;
 	}
-	else{
+	else {
 		cout << "[+] Priority Queue has data. - Queue Size : " << priQueue.size() <<endl;
 	}
 
